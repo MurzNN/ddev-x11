@@ -1,0 +1,5 @@
+name: ddev-x11
+
+project_files:
+  - config.x11.yaml
+  - docker-compose.x11.yaml

@@ -1,0 +1,9 @@
+web_environment:
+  - DISPLAY=:0
+
+# # Alternative that should work without custom mounts, but fail if the firewall is on.
+# web_environment:
+#  - DISPLAY=host.docker.internal:0
+# hooks:
+#   pre-start:
+#     - exec-host: "xhost +local:docker"
