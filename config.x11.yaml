@@ -1,3 +1,4 @@
+#ddev-generated
 # X11 forwarding for GUI apps (Playwright headed mode, Chrome, etc.) in the web container.
 hooks:
   pre-start:
