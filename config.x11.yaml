@@ -1,9 +1,14 @@
+#ddev-generated
+# X11 forwarding for GUI apps (Playwright headed mode, Chrome, etc.) in the web container.
+hooks:
+  pre-start:
+    - exec-host: "xhost +local:docker"
+
 web_environment:
   - DISPLAY=:0
+  # Without this, Chromium/Mesa hang trying to use GPU/DRM inside Docker (no window appears).
+  - LIBGL_ALWAYS_SOFTWARE=1
 
-# # Alternative that should work without custom mounts, but fail if the firewall is on.
+# Alternative when bind-mounting /tmp/.X11-unix is not possible (e.g. rootless Docker on macOS):
 # web_environment:
-#  - DISPLAY=host.docker.internal:0
-# hooks:
-#   pre-start:
-#     - exec-host: "xhost +local:docker"
+#   - DISPLAY=host.docker.internal:0

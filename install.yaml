@@ -3,3 +3,5 @@ name: ddev-x11
 project_files:
   - config.x11.yaml
   - docker-compose.x11.yaml
+
+ddev_version_constraint: '>= v1.24.10'
